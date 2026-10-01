@@ -85,8 +85,19 @@ parameters:
     allowed-any: false
     allowed-agent-node-ids: []
   stay-in-agent: true
-  telephony-config: null
-  enable-context: false
+  telephony-config:
+    enabled: true
+    llm-response-timeout-ms: 10000
+    barge-in-config:
+      barge-in: DISABLED
+      barge-in-trigger: FINAL
+      no-interrupt-time: 0
+    fillers-phrase-config:
+      activation-delay-ms: 1000
+      filler-phrases-list: []
+      is-pre-tool-enabled: false
+    silence-reprompt-config: null
+  enable-context: true
   use-dynamic-tools: false
   chat-history-limit: 50
   sequential-tool-calls-limit: 5
